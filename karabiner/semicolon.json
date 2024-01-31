@@ -1,0 +1,380 @@
+{
+  "description": "Semicolon to special characters",
+  "manipulators": [
+    {
+      "description": "semicolon = ;(click) | hyper(hold)",
+      "from": {
+        "key_code": "semicolon",
+        "modifiers": {
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "fn",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "to_if_alone": [
+        {
+          "key_code": "semicolon"
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + g= % => jump to matching pair",
+      "from": {
+        "key_code": "g",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "5",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + h = ^ => jump to beginning of line",
+      "from": {
+        "key_code": "h",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "6",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + j = * => jump to next occurrence",
+      "from": {
+        "key_code": "j",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "8",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + k = # => jump to next occurrence",
+      "from": {
+        "key_code": "k",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "3",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + l = $ => jump to end of line",
+      "from": {
+        "key_code": "l",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "4",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + w = ^",
+      "from": {
+        "key_code": "w",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "6",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + s = =",
+      "from": {
+        "key_code": "s",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "equal_sign"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + a = <",
+      "from": {
+        "key_code": "a",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "comma",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + d = >",
+      "from": {
+        "key_code": "d",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "period",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + b = +",
+      "from": {
+        "key_code": "b",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "equal_sign",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + n = {-}",
+      "from": {
+        "key_code": "n",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "hyphen"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + m = {&}",
+      "from": {
+        "key_code": "m",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "7",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + c = .",
+      "from": {
+        "key_code": "c",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "period"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + x = _",
+      "from": {
+        "key_code": "x",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "hyphen",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + q = {!}",
+      "from": {
+        "key_code": "q",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "1",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + e = @",
+      "from": {
+        "key_code": "e",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "2",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + r = Capslock",
+      "from": {
+        "key_code": "r",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "caps_lock"
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + o = `\\",
+      "from": {
+        "key_code": "o",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "backslash"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + i = |",
+      "from": {
+        "key_code": "i",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "backslash",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + u = `\\",
+      "from": {
+        "key_code": "u",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "grave_accent_and_tilde"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "; + z = ~",
+      "from": {
+        "key_code": "z",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "grave_accent_and_tilde",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+
+    {
+      "description": "; + f = :",
+      "from": {
+        "key_code": "f",
+        "modifiers": {
+          "mandatory": ["right_command", "right_control", "fn", "right_option"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "semicolon",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

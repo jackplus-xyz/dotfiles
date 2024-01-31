@@ -1,0 +1,67 @@
+{
+  "description": "Left Ctrl Deletion",
+  "manipulators": [
+    {
+      "description": "ctrl + b = delete a word ahead",
+      "from": {
+        "key_code": "b",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "delete_or_backspace",
+          "modifiers": ["left_option"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + n = delete a char ahead",
+      "from": {
+        "key_code": "n",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "delete_or_backspace"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + m = delete a char after",
+      "from": {
+        "key_code": "m",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "delete_forward"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + , = delete a word after",
+      "from": {
+        "key_code": "comma",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "delete_forward",
+          "modifiers": ["left_option"]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

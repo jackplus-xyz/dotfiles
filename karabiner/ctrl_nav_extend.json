@@ -1,0 +1,65 @@
+{
+  "description": "Left Ctrl + yuio = Home, End, Page Up, Page Down",
+  "manipulators": [
+    {
+      "description": "ctrl + y = home",
+      "from": {
+        "key_code": "y",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "home"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + u = pagedown",
+      "from": {
+        "key_code": "u",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "page_down"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + i = pageup",
+      "from": {
+        "key_code": "i",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "page_up"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + o = End",
+      "from": {
+        "key_code": "o",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "end"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

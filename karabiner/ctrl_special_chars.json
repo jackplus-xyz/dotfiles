@@ -1,0 +1,37 @@
+{
+  "description": "Left Ctrl + [] = ()",
+  "manipulators": [
+    {
+      "description": "ctrl + [ = (",
+      "from": {
+        "key_code": "open_bracket",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "9",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "ctrl + ] = )",
+      "from": {
+        "key_code": "close_bracket",
+        "modifiers": {
+          "mandatory": ["left_control"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "0",
+          "modifiers": ["left_shift"]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
