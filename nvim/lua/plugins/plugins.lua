@@ -9,4 +9,15 @@ return {
 		end,
 		ft = { "markdown" },
 	},
+	-- tailwind-tools.lua
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {
+			document_color = {
+				enabled = false,
+				kind = "foreground",
+			},
+		},
+	},
 }
