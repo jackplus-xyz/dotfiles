@@ -19,3 +19,6 @@ map("n", "<A-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<A-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<A-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<A-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+
+-- Toggle Tailwind CSS classes conceal
+map("n", "<leader>tc", "<cmd>TailwindConcealToggle<cr>", { noremap = true, silent = true })
