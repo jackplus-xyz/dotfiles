@@ -18,6 +18,10 @@ return {
 				enabled = false,
 				kind = "foreground",
 			},
+			conceal = {
+				enabled = true,
+				symbol = "~",
+			},
 		},
 	},
 }
