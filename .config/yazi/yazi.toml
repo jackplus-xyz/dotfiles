@@ -1,0 +1,3 @@
+[manager]
+ratio = [1, 2, 4]
+show_hidden = false

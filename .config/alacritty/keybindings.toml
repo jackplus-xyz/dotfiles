@@ -1,0 +1,7 @@
+[keyboard]
+bindings = [
+  { key = "F", mods = "Control | Shift", action = "ReceiveChar" },
+  { key = "H", mods = "Command | Shift", mode = "~Search", action = "ToggleViMode" },
+  { key = "Q", mode = "Vi|~Search", action = "ToggleViMode" },
+  { key = "Slash", mods = "Control", chars = "\u001f" },
+]

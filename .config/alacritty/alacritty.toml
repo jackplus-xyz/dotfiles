@@ -1,0 +1,25 @@
+import = [
+  "~/.config/alacritty/theme.toml",
+  "~/.config/alacritty/keybindings.toml",
+]
+
+[env]
+TERM = "alacritty"
+ALACRITTY = "true"
+
+[window]
+padding.x = 10
+padding.y = 10
+dynamic_padding = true
+decorations = "Buttonless"
+option_as_alt = "OnlyLeft"
+
+[font]
+normal = { family = "BerkeleyMono Nerd Font" }
+size = 14
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
