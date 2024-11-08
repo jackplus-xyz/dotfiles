@@ -12,7 +12,7 @@ NVIM_HOME="${NVIM_HOME:-$HOME/.config/nvim}"
 SBAR_HOME="${SBAR_HOME:-$HOME/.config/sketchybar}"
 YAZI_HOME="${YAZI_HOME:-$HOME/.config/yazi}"
 
-alacritty_light_theme="tomorrow"
+alacritty_light_theme="base16-tomorrow"
 alacritty_dark_theme="base16-default-dark"
 bat_light_theme="OneHalfLight"
 bat_dark_theme="OneHalfDark"
