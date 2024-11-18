@@ -1,32 +1,35 @@
-local theme_config = require("config.theme_config")
-local light_theme = "base16-tomorrow"
-local dark_theme = "base16-default-dark"
-
 return {
   {
-    "LazyVim/LazyVim",
-    opts = {
-      -- Initial setup
-      colorscheme = theme_config.is_dark_mode and dark_theme or light_theme,
-    },
+    "zenbones-theme/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    dependencies = "rktjmp/lush.nvim",
+    lazy = false,
+    priority = 1000,
+    -- you can set set configuration options here
+    config = function()
+      vim.g.noirbones_transparent_background = true
+    end,
   },
-
-  -- automatic switch between light and dark mode
+  -- Automatically switch between light and dark mode using darkvoid
   {
     "f-person/auto-dark-mode.nvim",
-    priority = 1000,
-    -- Add colorschemes to use here
-    dependencies = {
-      "RRethy/base16-nvim",
-    },
+    enabled = true,
     config = {
       update_interval = 1000,
       set_dark_mode = function()
-        vim.cmd("colorscheme " .. dark_theme)
+        vim.cmd("set background=dark")
       end,
       set_light_mode = function()
-        vim.cmd("colorscheme " .. light_theme)
+        vim.cmd("set background=light")
       end,
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "noirbones",
     },
   },
 }

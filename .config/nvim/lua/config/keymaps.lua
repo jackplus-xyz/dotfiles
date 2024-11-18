@@ -39,18 +39,12 @@ local function try_smart_split_or_vim(vim_cmd, smart_splits_func)
   end
 end
 -- Update key mappings to use the fixed function
-map("n", "<A-h>", function()
-  try_smart_split_or_vim("wincmd h", require("smart-splits").move_cursor_left)
-end, { desc = "Go to left window or try smart-split", remap = true })
-map("n", "<A-j>", function()
-  try_smart_split_or_vim("wincmd j", require("smart-splits").move_cursor_down)
-end, { desc = "Go to lower window or try smart-split", remap = true })
-map("n", "<A-k>", function()
-  try_smart_split_or_vim("wincmd k", require("smart-splits").move_cursor_up)
-end, { desc = "Go to upper window or try smart-split", remap = true })
-map("n", "<A-l>", function()
-  try_smart_split_or_vim("wincmd l", require("smart-splits").move_cursor_right)
-end, { desc = "Go to right window or try smart-split", remap = true })
+-- stylua: ignore start
+map("n", "<A-h>", function() try_smart_split_or_vim("wincmd h", require("smart-splits").move_cursor_left) end, { desc = "Go to left window or try smart-split", remap = true })
+map("n", "<A-j>", function() try_smart_split_or_vim("wincmd j", require("smart-splits").move_cursor_down) end, { desc = "Go to lower window or try smart-split", remap = true })
+map("n", "<A-k>", function() try_smart_split_or_vim("wincmd k", require("smart-splits").move_cursor_up) end, { desc = "Go to upper window or try smart-split", remap = true })
+map("n", "<A-l>", function() try_smart_split_or_vim("wincmd l", require("smart-splits").move_cursor_right) end, { desc = "Go to right window or try smart-split", remap = true })
+-- stylua: ignore end
 
 -- <leader>tc: toggle Tailwind CSS classes conceal
 map("n", "<leader>tc", "<cmd>TailwindConcealToggle<cr>", { noremap = true, silent = true })

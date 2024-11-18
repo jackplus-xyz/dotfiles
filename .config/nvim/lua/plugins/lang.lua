@@ -1,12 +1,13 @@
 return {
   {
+    -- render markdown file in neovim
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
       render_modes = { "n", "v", "i", "c" },
       heading = {
         sign = false,
         position = "inline",
-        backgrounds = { "ColorColumn" },
+        backgrounds = { "None" },
         foregrounds = { "RenderMarkdownH1" },
       },
       code = {
@@ -18,6 +19,5 @@ return {
       indent = { enabled = true },
     },
     ft = { "markdown", "norg", "rmd", "org" },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
   },
 }

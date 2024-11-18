@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Sort the Tailwind classes before the buffer is saved
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd("bufwritepre", {
   pattern = { "*.vue", "*.svelte", "*.js", "*.jsx", "*.ts", "*.tsx" },
-  command = "TailwindSort",
+  command = "tailwindsort",
 })

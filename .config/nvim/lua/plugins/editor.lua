@@ -3,6 +3,12 @@ return {
     -- sort & hide tailwind classes
     "luckasRanarison/tailwind-tools.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = {
+      "jsx",
+      "js",
+      "ts",
+      "tsx",
+    },
     opts = {
       document_color = {
         enabled = false,
@@ -72,19 +78,6 @@ return {
     },
   },
   {
-    -- A neovim plugin to persist and toggle multiple terminals during an editing session
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("toggleterm").setup({
-        open_mapping = [[<c-/>]],
-        shade_terminals = false,
-      })
-    end,
-    keys = {
-      { [[<C-/>]] },
-    },
-  },
-  {
     --A simple Neovim plugin to build games with LÖVE
     "S1M0N38/love2d.nvim",
     lazy = false,
@@ -105,12 +98,14 @@ return {
     },
   },
   {
-    -- `kitty.conf` syntax highlighting
-    "fladson/vim-kitty",
-  },
-  {
     -- Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right".
     "mrjones2014/smart-splits.nvim",
     build = "./kitty/install-kittens.bash",
+  },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      icons = { mappings = false }, -- hide the icons in `which-key`
+    },
   },
 }

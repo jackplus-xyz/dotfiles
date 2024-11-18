@@ -1,5 +1,6 @@
 local HOME = os.getenv("HOME")
 return {
+  -- disable some markdownlint rules
   "mfussenegger/nvim-lint",
   opts = {
     linters = {
