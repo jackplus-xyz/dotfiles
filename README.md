@@ -1,4 +1,8 @@
 # dotfiles
+<div style="display: flex; gap: 10px;">
+  <img width="480" alt="Screenshot 2024-11-07 at 13 19 02" src="https://github.com/user-attachments/assets/2d9fd668-167d-4cb2-b6eb-2c717033b5d5">
+  <img width="480" alt="Screenshot 2024-11-19 at 09 57 04" src="https://github.com/user-attachments/assets/41433943-75cc-4e61-8c2e-cc1e1e2da058">
+</div>
 
 My personal collection of dotfiles for macOS with automatic dark mode update across terminal applications.
 
