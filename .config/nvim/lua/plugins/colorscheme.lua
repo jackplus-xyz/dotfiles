@@ -15,7 +15,6 @@ return {
   -- Automatically switch between light and dark mode using darkvoid
   {
     "f-person/auto-dark-mode.nvim",
-    enabled = true,
     config = {
       update_interval = 1000,
       set_dark_mode = function()
