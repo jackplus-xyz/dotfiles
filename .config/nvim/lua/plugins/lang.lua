@@ -19,5 +19,8 @@ return {
       indent = { enabled = true },
     },
     ft = { "markdown", "norg", "rmd", "org" },
+    keys = {
+      { "<leader>mr", "<Cmd>RenderMarkdown toggle<CR>", desc = "Next tab" },
+    },
   },
 }
