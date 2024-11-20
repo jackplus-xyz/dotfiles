@@ -80,7 +80,7 @@ return {
   {
     --A simple Neovim plugin to build games with LÖVE
     "S1M0N38/love2d.nvim",
-    lazy = false,
+    lazy = true,
     ft = "lua",
     cmd = "LoveRun",
     opts = {},
