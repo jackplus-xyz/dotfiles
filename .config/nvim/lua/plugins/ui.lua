@@ -124,9 +124,13 @@ return {
 ██████  █████████████████████ ████ █████ █████ ████ ██████
 ]],
         },
-
         formats = {
           key = { "" },
+        },
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 3 },
+          { section = "startup" },
         },
       },
     },
