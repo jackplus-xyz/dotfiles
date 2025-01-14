@@ -208,4 +208,7 @@ return {
 	["Firefox"] = ":firefox:",
 	["WezTerm"] = ":wezterm:",
 	["default"] = ":default:",
+	["Ghostty"] = ":ghostty:",
+	["Rio"] = ":rio:",
+	["ChatGPT"] = ":openai:",
 }
