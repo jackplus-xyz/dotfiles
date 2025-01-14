@@ -74,11 +74,11 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 8
-inner.vertical = 8
+# inner.horizontal = 8
+# inner.vertical = 8
 outer.left = 8
 outer.bottom = 8
-outer.top = 10
+outer.top = 8
 outer.right = 8
 
 # 'main' binding mode declaration
@@ -104,6 +104,7 @@ alt-shift-w = 'move up'
 alt-shift-d = 'move right'
 
 alt-shift-enter = "fullscreen"
+alt-shift-f = "macos-native-fullscreen"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
@@ -260,3 +261,6 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'io.ganeshrvel.openmtp'
 run = 'layout floating'
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = ["layout tiling"]
