@@ -1,9 +1,8 @@
 return {
   {
-    -- fast and feature-rich surround actions
+    -- Overwrite the default keymaps of `gs` to `;`
     "echasnovski/mini.surround",
     opts = {
-      -- Overwrite the default keymaps of `gs` to `;`
       mappings = {
         add = ";;",
         delete = ";d",
@@ -49,6 +48,24 @@ return {
       { "w", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" } },
       { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" } },
       { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
+    },
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    -- enabled = false,
+    opts = {
+      model = "claude-3.5-sonnet",
+      question_header = "  User ",
+      answer_header = "  Copilot ",
+    },
+  },
+  {
+    "saghen/blink.cmp",
+    -- enabled = false,
+    -- dev = true,
+    dir = "~/.local/share/nvim/lazy/blink.cmp",
+    opts = {
+      -- signature = { enabled = false },
     },
   },
 }

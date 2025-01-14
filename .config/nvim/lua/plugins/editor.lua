@@ -34,6 +34,7 @@ return {
     -- terminal file manager
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
+    enabled = false,
     keys = {
       -- 👇 in this section, choose your own keymappings!
       {
@@ -69,14 +70,14 @@ return {
     },
   },
   -- Don't bring up neotree when opening a directory
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        hijack_netrw_behavior = "disabled",
-      },
-    },
-  },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   opts = {
+  --     filesystem = {
+  --       hijack_netrw_behavior = "disabled",
+  --     },
+  --   },
+  -- },
   {
     --A simple Neovim plugin to build games with LÖVE
     "S1M0N38/love2d.nvim",
@@ -88,13 +89,12 @@ return {
       { "<leader>v", ft = "lua", desc = "LÖVE" },
       { "<leader>vv", "<cmd>LoveRun<cr>", ft = "lua", desc = "Run LÖVE" },
       { "<leader>vs", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
-    },
-  },
-  {
-    -- Distraction-free coding for Neovim
-    "folke/zen-mode.nvim",
-    keys = {
-      { "<leader>zm", "<cmd>ZenMode<cr>", desc = "Toggle Zen Mode" },
+      {
+        "<leader>vl",
+        "<cmd>!rm -rf /tmp/love.log && love . > /tmp/love.log<cr>",
+        ft = "lua",
+        desc = "Run LÖVE with logging",
+      },
     },
   },
   {
@@ -106,6 +106,28 @@ return {
     "folke/which-key.nvim",
     opts = {
       icons = { mappings = false }, -- hide the icons in `which-key`
+    },
+  },
+  {
+    "jellydn/my-note.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    keys = {
+      {
+        "<leader>mn",
+        "<cmd>MyNote<cr>",
+        desc = "Open note",
+      },
+    },
+    opts = {
+      files = {
+        -- Using the parent .git folder as the current working directory
+        cwd = function()
+          local bufPath = vim.api.nvim_buf_get_name(0)
+          local cwd = require("lspconfig").util.root_pattern(".git")(bufPath)
+
+          return cwd
+        end,
+      },
     },
   },
 }

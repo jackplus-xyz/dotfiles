@@ -9,6 +9,7 @@ return {
         "html",
         "javascript",
         "json",
+        "glsl",
         "lua",
         "python",
         "query",
