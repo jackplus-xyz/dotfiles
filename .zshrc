@@ -108,14 +108,36 @@ export EDITOR="nvim"
 #
 # aliases
 #
+alias src="source ~/.zshrc"
+
+# eza aliases
 alias ls=eza
-alias la=ls -a
+alias la="ls -a"
+alias ll="ls -la"
+
+# navigation aliases
+alias ..="cd .."
+alias ...="cd ../.."
+
+# utils aliases
 alias cat=bat
 alias cl=clear
 alias n=nvim
 alias lg=lazygit
 alias yy=yazi
 alias love="/Applications/love.app/Contents/MacOS/love"
+alias grep="grep --color=auto"
+
+# History aliases
+alias h='history'
+alias hgrep='history | grep'
+alias hclear='history -c'
+
+# Fzf aliases
+alias fzf='fzf-tmux'
+alias fh='history | fzf'
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --bind 'enter:execute(nvim {})'"
+export FZF_DEFAULT_COMMAND="fd --type f"
 
 # pnpm
 export PNPM_HOME="/Users/jj/Library/pnpm"
@@ -188,3 +210,6 @@ eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.config/dotfiles/.p10k.zsh.
+[[ ! -f ~/.config/dotfiles/.p10k.zsh ]] || source ~/.config/dotfiles/.p10k.zsh

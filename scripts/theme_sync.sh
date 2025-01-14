@@ -2,7 +2,6 @@
 # Require: https://github.com/bouk/dark-mode-notify
 # Synchronizes themes across applications based on system appearance (light or dark mode).
 
-# Define paths and themes for easy modification
 ALA_HOME="${ALA_HOME:-$HOME/.config/alacritty}"
 BAT_HOME="${BAT_HOME:-$HOME/.config/bat}"
 BORDERS_HOME="${BORDERS_HOME:-$HOME/.config/borders}"
@@ -11,19 +10,22 @@ KITTY_HOME="${KITTY_HOME:-$HOME/.config/kitty}"
 NVIM_HOME="${NVIM_HOME:-$HOME/.config/nvim}"
 SBAR_HOME="${SBAR_HOME:-$HOME/.config/sketchybar}"
 YAZI_HOME="${YAZI_HOME:-$HOME/.config/yazi}"
+ZELLIJ_HOME="${ZELLIJ_HOME:-$HOME/.config/zellij}"
 
-alacritty_light_theme="base16-tomorrow"
-alacritty_dark_theme="base16-default-dark"
+alacritty_light_theme="zenwritten_light"
+alacritty_dark_theme="zenwritten_dark"
 bat_light_theme="OneHalfLight"
 bat_dark_theme="OneHalfDark"
 btop_light_theme="whiteout"
 btop_dark_theme="TTY"
 kitty_light_theme="base16-tomorrow-256"
 kitty_dark_theme="base16-default-dark-256"
-yazi_light_theme="latte"
-yazi_dark_theme="mocha"
+yazi_light_theme="zenwritten_light"
+yazi_dark_theme="zenwritten_dark"
 borders_active_color_light="0xff4170AE"
 borders_active_color_dark="0xff7cafc2"
+zellij_light_theme="zenwritten_light"
+zellij_dark_theme="zenwritten_dark"
 
 # Function to set the Alacritty theme
 set_alacritty_theme() {
@@ -105,7 +107,6 @@ EOF
   fi
 }
 
-# Function to set NeoVim theme
 set_neovim_theme() {
   local mode="$1"
   cat >"$NVIM_HOME/lua/config/theme_config.lua" <<EOF
@@ -115,25 +116,31 @@ return {
 EOF
 
   # Send SIGUSR1 to all running Neovim instances
-  for pid in $(pgrep nvim); do
-    kill -SIGUSR1 "$pid"
-  done
+  # for pid in $(pgrep nvim); do
+  #   kill -SIGUSR1 "$pid"
+  # done
 }
 
-# Function to set SketchyBar theme
 set_sketchybar_theme() {
   local mode="$1"
   echo "return '$mode'" >"$SBAR_HOME/is_dark_mode.lua"
   /opt/homebrew/bin/sketchybar --reload
 }
 
-# Function to set the Yazi theme
 set_yazi_theme() {
   local mode="$1"
   local theme_file="$YAZI_HOME/themes/${yazi_light_theme}.toml"
   [[ "$mode" == "dark" ]] && theme_file="$YAZI_HOME/themes/${yazi_dark_theme}.toml"
 
   ln -sf "$theme_file" "$YAZI_HOME/theme.toml"
+}
+
+set_zellij_theme() {
+  local mode="$1"
+  local theme = $zellij_light_theme
+  [[ "$mode" == "dark" ]] && theme = $zellij_dark_theme
+
+  zellij options --theme theme
 }
 
 # Main theme_sync function to set themes across applications
@@ -152,12 +159,13 @@ theme_sync() {
 
   set_alacritty_theme "$mode"
   set_bat_theme "$mode"
-  set_border_color "$mode"
+  # set_border_color "$mode"
   set_btop_theme "$mode"
-  set_kitty_theme "$mode"
-  set_neovim_theme "$mode"
-  set_sketchybar_theme "$mode"
-  set_yazi_theme "$mode"
+  # set_kitty_theme "$mode"       # kitty now supports theme change
+  # set_neovim_theme "$mode"      # in favor of `auto-dark-mode.nvim`
+  # set_sketchybar_theme "$mode"  
+  # set_yazi_theme "$mode"        # yazi now supports theme change
+  # set_zellij_theme "$mode"
 }
 
 # Call the main function with the provided argument (if any)
