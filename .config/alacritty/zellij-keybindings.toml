@@ -1,0 +1,19 @@
+[keyboard]
+bindings = [
+  { key = "Q", mode = "Vi|~Search", action = "ToggleViMode" },
+  # AeroSpace
+  { key = "F", mods = "Control | Shift", action = "ReceiveChar" },
+  # Zellij
+  { key = "T", mods = "Command", action = "ReceiveChar" },
+  { key = "W", mods = "Command", action = "ReceiveChar" },
+  { key = "M", mods = "Command", action = "ReceiveChar" },
+  { key = "1", mods = "Command", action = "ReceiveChar" },
+  { key = "2", mods = "Command", action = "ReceiveChar" },
+  { key = "3", mods = "Command", action = "ReceiveChar" },
+  { key = "4", mods = "Command", action = "ReceiveChar" },
+  { key = "5", mods = "Command", action = "ReceiveChar" },
+  { key = "6", mods = "Command", action = "ReceiveChar" },
+  { key = "7", mods = "Command", action = "ReceiveChar" },
+  { key = "8", mods = "Command", action = "ReceiveChar" },
+  { key = "9", mods = "Command", action = "ReceiveChar" },
+]

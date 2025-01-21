@@ -1,0 +1,5 @@
+[font]
+normal = { family = "Monaspace Neon", style = "Light" }
+bold = { family = "Monaspace Xenon", style = "ExtraLight" }
+italic = { family = "Monaspace Radon", style = "ExtraLight Italic" }
+bold_italic = { family = "Monaspace Krypton", style = "Bold" }
