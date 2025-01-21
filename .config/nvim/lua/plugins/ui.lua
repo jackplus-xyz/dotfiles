@@ -21,27 +21,19 @@ return {
     },
   },
   {
-    -- disabled LazyVim default statusline
-    "nvim-lualine/lualine.nvim",
-    -- enabled = false,
-    -- opts = function()
-    --   return {
-    --     options = {
-    --       component_separators = { left = "", right = "" },
-    --       section_separators = { left = "", right = "" },
-    --     },
-    --   }
-    -- end,
-  },
-  {
     "echasnovski/mini.statusline",
-    enabled = false,
+    -- enabled = false,
     version = "*",
     event = "VeryLazy",
     dependencies = {
       {
         "lewis6991/gitsigns.nvim",
         enabled = true,
+      },
+      {
+        -- disabled LazyVim default statusline
+        "nvim-lualine/lualine.nvim",
+        enabled = false,
       },
     },
     config = function()

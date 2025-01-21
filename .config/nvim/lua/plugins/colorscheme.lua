@@ -3,12 +3,12 @@ return {
     "LazyVim/LazyVim",
     opts = function()
       return {
-        colorscheme = "zenwritten",
+        -- colorscheme = "zenwritten",
         -- colorscheme = vim.g.neovide and "flexoki-dark" or "zenwritten",
         -- colorscheme = "quiet",
         -- colorscheme = "binary",
         -- colorscheme = "campfire",
-        -- colorscheme = "flexoki",
+        colorscheme = "flexoki",
       }
     end,
   },
@@ -24,7 +24,7 @@ return {
     -- enabled = false,
     opts = {
       style = "night",
-      transparent = true,
+      -- transparent = true,
       day_brightness = 0,
       styles = {
         sidebars = "transparent", -- style for sidebars, see below

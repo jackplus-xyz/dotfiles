@@ -2,13 +2,13 @@ return {
   {
     "jackplus-xyz/scroll-it.nvim",
     -- enabled = false,
-    -- dev = true,
+    dev = true,
     dir = "~/Developer/projects/scroll-it.nvim",
     lazy = false,
     opts = {
-      enabled = true,
+      -- enabled = true,
       -- reversed = true,
-      -- overlap_lines = 4,
+      overlap_lines = 4,
       hide_line_number = "all",
     },
     keys = {
@@ -21,15 +21,24 @@ return {
   },
   {
     "jackplus-xyz/binary.nvim",
-    dev = false,
+    -- dev = true,
     dir = "~/Developer/projects/binary.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
       colors = {
+        -- fg = "#ff0000",
         -- bg = "#ffb400",
-        fg = "#1B1B1B",
-        bg = "#EBEBEB",
+        -- fg = "#191919",
+        -- bg = "#EBEBEB",
+        -- fg = "#0E1F12",
+        -- bg = "#2CF180",
+        -- fg = "#1F4382",
+        -- bg = "#60D9FE",
       },
+      -- use_default_reversed_group = false,
       reversed_group = {
+        -- ["@lsp.type.comment"] = true,
         DiffAdd = true,
         DiffDelete = true,
         DiffText = true,
@@ -37,7 +46,7 @@ return {
     },
   },
   {
-    "jeackpls-xyz/monaspace.nvim",
+    "jackpls-xyz/monaspace.nvim",
     enabled = false,
     dir = "~/Developer/projects/monaspace.nvim",
     dev = true,
@@ -53,6 +62,7 @@ return {
     },
   },
   {
+    -- Archived and successed by `player-one.nvim`
     "jackplus-xyz/campfire.nvim",
     enabled = false,
     dev = true,
@@ -62,5 +72,13 @@ return {
       require("campfire").setup()
     end,
     -- opts = {},
+  },
+  {
+    "jackplus-xyz/player-one.nvim",
+    lazy = false,
+    -- enabled = false,
+    dev = true,
+    dir = "~/Developer/projects/player-one.nvim",
+    opts = {},
   },
 }
