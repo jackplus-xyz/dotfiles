@@ -1,0 +1,22 @@
+theme = "flexoki_light"
+
+[editor]
+line-number = "relative"
+cursorline = true
+mouse = true
+color-modes = true
+bufferline = "multiple"
+clipboard-provider = "pasteboard"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.gutters.line-numbers]
+min-width = 1
+
+[keys.normal]
+# Use Shift-l and -h to move through tabs
+# S-l = ":buffer-next"
+# S-h = ":buffer-previous"
