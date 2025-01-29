@@ -3,18 +3,12 @@ return {
     "LazyVim/LazyVim",
     opts = function()
       return {
+        -- colorscheme = "flexoki",
         -- colorscheme = "zenwritten",
-        -- colorscheme = vim.g.neovide and "flexoki-dark" or "zenwritten",
-        -- colorscheme = "quiet",
-        -- colorscheme = "binary",
-        -- colorscheme = "campfire",
-        colorscheme = "flexoki",
+        -- colorscheme = "mime",
       }
     end,
   },
-  -- { "RRethy/base16-nvim" },
-  -- {  "kepano/flexoki-neovim", name = "flexoki" },
-  -- { "atelierbrnackam/Base2Tone-nvim" },
   { "nuvic/flexoki-nvim", name = "flexoki" },
   { "catppuccin/nvim", enabled = false },
   {
@@ -24,12 +18,13 @@ return {
     -- enabled = false,
     opts = {
       style = "night",
-      -- transparent = true,
+      transparent = true,
       day_brightness = 0,
       styles = {
         sidebars = "transparent", -- style for sidebars, see below
         floats = "transparent", -- style for floating windows
       },
+      tab_size = 8,
     },
   },
   {

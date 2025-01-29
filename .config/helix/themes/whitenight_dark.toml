@@ -1,0 +1,43 @@
+inherits = "whitenight_light"
+
+[palette]
+# base00 = "#191919"
+# base01 = "#282828"
+# base02 = "#484848"
+# base03 = "#585858"
+# base04 = "#888888"
+# base05 = "#a8a8a8"
+# base06 = "#b8b8b8"
+# base07 = "#e8e8e8"
+
+base00 = "#121212"  
+base01 = "#1e1e1e"  
+base02 = "#2a2a2a"  
+base03 = "#3c3c3c"  
+base04 = "#505050"  
+base05 = "#6e6e6e"  
+base06 = "#8c8c8c"  
+base07 = "#f0f0f0"  
+
+# base16-tomorrow-night
+# black = '#181818'
+# red = '#cc6666'
+# green = '#b5bd68'
+# yellow = '#f0c674'
+# blue = '#81a2be'
+# magenta = '#b294bb'
+# cyan = '#8abeb7'
+# orange = "#de935f"
+# white = '#d8d8d8'
+
+# flexoki-dark
+black = "#100F0F"
+red = "#AF3029"
+green = "#66800B"
+yellow = "#AD8301"
+blue = "#205EA6"
+magenta = "#A02F6F"
+cyan = "#24837B"
+white = "#FFFCF0"
+orange = "#DA702C"
+

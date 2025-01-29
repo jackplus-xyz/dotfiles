@@ -6,6 +6,7 @@ if status is-interactive
     end
 end
 
+set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -x PATH $HOME/.cargo/bin $PATH
 set -U fish_greeting ""
 set -gx hydro_symbol_prompt ">"
@@ -37,9 +38,10 @@ alias yy='yazi'
 alias love='/Applications/love.app/Contents/MacOS/love'
 alias grep='grep --color=auto'
 alias zj='zellij'
+alias h='hx'
 
 # Environment variables
-set -gx EDITOR nvim
+set -gx EDITOR hx
 # set -gx FZF_DEFAULT_OPTS "--preview 'bat --color=always {}' --bind 'enter:execute(nvim {})'"
 # set -gx FZF_DEFAULT_COMMAND "fd --type f"
 
@@ -64,8 +66,8 @@ function fish_title
     echo $PWD
 end
 
-function starship_transient_prompt_func
-    starship module character
-end
+# function starship_transient_prompt_func
+#     starship module character
+# end
 starship init fish | source
-enable_transience
+# enable_transience

@@ -7,6 +7,7 @@ bindings = [
   { key = "T", mods = "Command", action = "ReceiveChar" },
   { key = "W", mods = "Command", action = "ReceiveChar" },
   { key = "M", mods = "Command", action = "ReceiveChar" },
+  { key = "N", mods = "Command", action = "ReceiveChar" },
   { key = "1", mods = "Command", action = "ReceiveChar" },
   { key = "2", mods = "Command", action = "ReceiveChar" },
   { key = "3", mods = "Command", action = "ReceiveChar" },

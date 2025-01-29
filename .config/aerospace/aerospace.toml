@@ -88,8 +88,8 @@ outer.right = 8
 [mode.main.binding]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion vertical horizontal '
+alt-shift-slash = 'layout tiles horizontal vertical'
+alt-shift-comma = 'layout accordion vertical horizontal '
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-h = 'focus left'

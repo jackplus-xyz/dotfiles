@@ -1,3 +1,18 @@
 [manager]
-ratio = [1, 2, 4]
+ratio = [0, 2, 4]
 show_hidden = false
+
+[plugin]
+prepend_previewers = [
+    { name = "*.csv", run = "bat" },
+    { name = "*.md", run = "bat" },
+]
+
+previewers = [
+	{ name = "*/", run = "folder", sync = true },
+	{ mime = "text/*",                 run = "bat" },
+	{ mime = "*/xml",                  run = "bat" },
+	{ mime = "*/cs",                   run = "bat" },
+	{ mime = "*/javascript",           run = "bat" },
+	{ mime = "*/x-wine-extension-ini", run = "bat" },
+]

@@ -40,3 +40,4 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+.aider*

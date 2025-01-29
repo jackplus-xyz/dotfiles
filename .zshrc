@@ -139,6 +139,14 @@ alias fh='history | fzf'
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --bind 'enter:execute(nvim {})'"
 export FZF_DEFAULT_COMMAND="fd --type f"
 
+# function neovide(){
+#     ARG="${1:-.}"
+#     CUR="$(pwd)"
+#     FILE="${CUR}/${ARG}"
+#     PATH=$(env) NEOVIDE_CWD=$(pwd) open -a Neovide.app --args $(pwd)
+# }
+alias nv=neovide
+
 # pnpm
 export PNPM_HOME="/Users/jj/Library/pnpm"
 case ":$PATH:" in

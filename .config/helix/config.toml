@@ -1,22 +1,33 @@
-theme = "flexoki_light"
+theme = "theme"
 
 [editor]
-line-number = "relative"
-cursorline = true
-mouse = true
-color-modes = true
-bufferline = "multiple"
-clipboard-provider = "pasteboard"
+end-of-line-diagnostics = "hint"
 
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
-
-[editor.gutters.line-numbers]
-min-width = 1
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [keys.normal]
-# Use Shift-l and -h to move through tabs
-# S-l = ":buffer-next"
-# S-h = ":buffer-previous"
+"C-s" = ":write"
+"9"= "rotate_selections_backward"
+"0"= "rotate_selections_forward"
+"("= "rotate_selection_contents_backward"
+")"= "rotate_selection_contents_forward"
+"tab" = ":buffer-next"
+"S-tab" = ":buffer-previous"
+
+[keys.normal.space]
+c = { r = ":config-reload" } 
+m = "save_selection"
+r = { s = "remove_selections" }
+F = { a = ":toggle file-picker.git-ignore", F = "file_picker_in_current_directory"}
+
+[keys.normal.space.q]
+q = ":q"
+a = ":q!"
+
+# [keys.normal.space.b]
+# e = "buffer_picker"
+# d = ":buffer-close"
+# o = ":buffer-close-others"
+# n = ":buffer-next"
+# p = ":buffer-previous"

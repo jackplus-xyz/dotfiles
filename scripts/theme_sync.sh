@@ -6,26 +6,33 @@ ALA_HOME="${ALA_HOME:-$HOME/.config/alacritty}"
 BAT_HOME="${BAT_HOME:-$HOME/.config/bat}"
 BORDERS_HOME="${BORDERS_HOME:-$HOME/.config/borders}"
 BTOP_HOME="${BTOP_HOME:-$HOME/.config/btop}"
+HELIX_HOME="${HELIX_HOME:-$HOME/.config/helix}"
 KITTY_HOME="${KITTY_HOME:-$HOME/.config/kitty}"
 NVIM_HOME="${NVIM_HOME:-$HOME/.config/nvim}"
 SBAR_HOME="${SBAR_HOME:-$HOME/.config/sketchybar}"
 YAZI_HOME="${YAZI_HOME:-$HOME/.config/yazi}"
 ZELLIJ_HOME="${ZELLIJ_HOME:-$HOME/.config/zellij}"
 
-alacritty_light_theme="zenwritten_light"
-alacritty_dark_theme="zenwritten_dark"
+# alacritty_light_theme="zenwritten_light"
+# alacritty_dark_theme="zenwritten_dark"
+alacritty_light_theme="flexoki-light"
+alacritty_dark_theme="flexoki-dark"
 bat_light_theme="OneHalfLight"
 bat_dark_theme="OneHalfDark"
 btop_light_theme="whiteout"
 btop_dark_theme="TTY"
+# helix_light_theme="whitenight_light"
+# helix_dark_theme="whitenight_dark"
+helix_light_theme="flexoki_light"
+helix_dark_theme="flexoki_dark"
 kitty_light_theme="base16-tomorrow-256"
 kitty_dark_theme="base16-default-dark-256"
 yazi_light_theme="zenwritten_light"
 yazi_dark_theme="zenwritten_dark"
 borders_active_color_light="0xff4170AE"
 borders_active_color_dark="0xff7cafc2"
-zellij_light_theme="zenwritten_light"
-zellij_dark_theme="zenwritten_dark"
+zellij_light_theme="flexoki-light"
+zellij_dark_theme="flexoki-dark"
 
 # Function to set the Alacritty theme
 set_alacritty_theme() {
@@ -61,6 +68,18 @@ set_btop_theme() {
   [[ "$mode" == "dark" ]] && theme="$btop_dark_theme"
 
   sed -i '' "s|^color_theme = .*$|color_theme = \"${theme}\"|" "$BTOP_HOME/btop.conf"
+}
+
+set_helix_theme() {
+  local mode="$1"
+  local theme="$helix_light_theme"
+  [[ "$mode" == "dark" ]] && theme="$helix_dark_theme"
+
+  local theme_file="$HELIX_HOME/themes/${theme}.toml"
+  ln -sf "$theme_file" "$HELIX_HOME/themes/theme.toml"
+
+  # Send USR1 signal to all running helix instances to reload config
+  pkill -USR1 hx || true
 }
 
 # Function to set the Kitty theme
@@ -137,10 +156,11 @@ set_yazi_theme() {
 
 set_zellij_theme() {
   local mode="$1"
-  local theme = $zellij_light_theme
-  [[ "$mode" == "dark" ]] && theme = $zellij_dark_theme
+  local theme="$zellij_light_theme"
+  
+  [[ "$mode" == "dark" ]] && theme="$zellij_dark_theme"
 
-  zellij options --theme theme
+  sed -i '' "s|^theme .*$|theme \"${theme}\"|" "$ZELLIJ_HOME/config.kdl"
 }
 
 # Main theme_sync function to set themes across applications
@@ -160,12 +180,13 @@ theme_sync() {
   set_alacritty_theme "$mode"
   set_bat_theme "$mode"
   # set_border_color "$mode"
-  set_btop_theme "$mode"
+  # set_btop_theme "$mode"
+  set_helix_theme "$mode"
   # set_kitty_theme "$mode"       # kitty now supports theme change
   # set_neovim_theme "$mode"      # in favor of `auto-dark-mode.nvim`
   # set_sketchybar_theme "$mode"  
   # set_yazi_theme "$mode"        # yazi now supports theme change
-  # set_zellij_theme "$mode"
+  set_zellij_theme "$mode"
 }
 
 # Call the main function with the provided argument (if any)

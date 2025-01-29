@@ -17,6 +17,10 @@ option_as_alt = "OnlyLeft"
 
 [font]
 # normal = { family = "BerkeleyMono Nerd Font" }
+# normal = { family = "TX-02", style = "SemiLight" }
+# bold = { family = "TX-02", style ="Medium" }
+# italic = { family = "TX-02", style = "SemiLight Oblique"}
+# bold_italic = { family = "TX-02", style = "Medium Oblique"}
 # normal = { family = "JetbrainsMono Nerd Font" }
 normal = { family = "BlexMono Nerd Font", style = "Regular" }
 bold = { family = "BlexMono Nerd Font", style = "Medium" }

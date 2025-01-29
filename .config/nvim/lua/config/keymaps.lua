@@ -16,6 +16,25 @@ map(
   { desc = "Open Markdown Preview in Browser", noremap = true, silent = true }
 )
 
+-- <leader>mf: Run current Lua file
+map("n", "<leader>mf", function()
+  if vim.bo.filetype ~= "lua" then
+    vim.notify("Not a Lua file", vim.log.levels.WARN)
+    return
+  end
+  vim.cmd("source %")
+  vim.notify("Sourced " .. vim.fn.expand("%:t"), vim.log.levels.INFO)
+end, { desc = "Run current Lua file", noremap = true, silent = true })
+
+-- <leader>mt: Test current Lua file
+map("n", "<leader>mt", function()
+  if vim.bo.filetype ~= "lua" then
+    vim.notify("Not a Lua file", vim.log.levels.WARN)
+    return
+  end
+  vim.cmd("PlenaryBustedFile %")
+end, { desc = "Test current Lua file", noremap = true, silent = true })
+
 -- remove default mappings
 del("n", "<C-h>")
 del("n", "<C-j>")

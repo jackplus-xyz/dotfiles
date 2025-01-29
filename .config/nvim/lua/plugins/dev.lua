@@ -21,29 +21,33 @@ return {
   },
   {
     "jackplus-xyz/binary.nvim",
+    enabled = false,
     -- dev = true,
-    dir = "~/Developer/projects/binary.nvim",
-    lazy = false,
+    -- dir = "~/Developer/projects/binary.nvim",
+    -- lazy = false,
     priority = 1000,
-    opts = {
-      colors = {
-        -- fg = "#ff0000",
-        -- bg = "#ffb400",
-        -- fg = "#191919",
-        -- bg = "#EBEBEB",
-        -- fg = "#0E1F12",
-        -- bg = "#2CF180",
-        -- fg = "#1F4382",
-        -- bg = "#60D9FE",
-      },
-      -- use_default_reversed_group = false,
-      reversed_group = {
-        -- ["@lsp.type.comment"] = true,
-        DiffAdd = true,
-        DiffDelete = true,
-        DiffText = true,
-      },
-    },
+    -- opts = {
+    --   colors = {
+    --     -- fg = "#ff0000",
+    --     -- bg = "#ffb400",
+    --     -- fg = "#191919",
+    --     -- bg = "#EBEBEB",
+    --     -- fg = "#0E1F12",
+    --     -- bg = "#2CF180",
+    --     -- fg = "#1F4382",
+    --     -- bg = "#60D9FE",
+    --     fg = "#2CF180",
+    --     bg = "#0E1F12",
+    --   },
+    --   -- use_default_reversed_group = false,
+    --   reversed_group = {
+    --     -- ["@lsp.type.comment"] = true,
+    --     DiffAdd = true,
+    --     DiffDelete = true,
+    --     DiffText = true,
+    --     Cursor = false,
+    --   },
+    -- },
   },
   {
     "jackpls-xyz/monaspace.nvim",
@@ -75,10 +79,20 @@ return {
   },
   {
     "jackplus-xyz/player-one.nvim",
-    lazy = false,
-    -- enabled = false,
     dev = true,
     dir = "~/Developer/projects/player-one.nvim",
+    -- lazy = true,
+    -- enabled = false,
+    dependencies = {
+      -- {
+      --   "saghen/blink.cmp",
+      --   enabled = false,
+      -- },
+      {
+        "nvim-lua/plenary.nvim",
+        lazy = false,
+      },
+    },
     opts = {},
   },
 }

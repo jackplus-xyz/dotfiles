@@ -31,54 +31,6 @@ return {
     ft = { "markdown" },
   },
   {
-    -- terminal file manager
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    enabled = false,
-    keys = {
-      -- 👇 in this section, choose your own keymappings!
-      {
-        "<leader>yf",
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-      {
-        -- Open in the current working directory
-        "<leader>yy",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
-      },
-      -- {
-      -- NOTE: this requires a version of yazi that includes
-      -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-      -- "<c-up>",
-      -- "<cmd>Yazi toggle<cr>",
-      -- desc = "Resume the last yazi session",
-      -- },
-    },
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
-
-      -- enable these if you are using the latest version of yazi
-      -- use_ya_for_events_reading = true,
-      -- use_yazi_client_id_flag = true,
-
-      -- keymaps = {
-      --   show_help = "<f1>",
-      -- },
-    },
-  },
-  -- Don't bring up neotree when opening a directory
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   opts = {
-  --     filesystem = {
-  --       hijack_netrw_behavior = "disabled",
-  --     },
-  --   },
-  -- },
-  {
     --A simple Neovim plugin to build games with LÖVE
     "S1M0N38/love2d.nvim",
     lazy = true,
@@ -108,26 +60,104 @@ return {
       icons = { mappings = false }, -- hide the icons in `which-key`
     },
   },
+  -- {
+  --   "ibhagwan/fzf-lua",
+  --   opts = {
+  --     files = {
+  --       git_icons = false,
+  --       file_icons = false,
+  --       actions = {
+  --         ["alt-g"] = { require("fzf-lua").actions.toggle_ignore },
+  --         ["alt-h"] = { require("fzf-lua").actions.toggle_hidden },
+  --       },
+  --     },
+  --     -- fzf_colors = false,
+  --     winopts = {
+  --       border = "single",
+  --       preview = {
+  --         border = "single",
+  --         scrollbar = false,
+  --       },
+  --     },
+  --   },
+  -- },
   {
-    "jellydn/my-note.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    keys = {
-      {
-        "<leader>mn",
-        "<cmd>MyNote<cr>",
-        desc = "Open note",
+    "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
+    opts = {
+      default_component_configs = {
+        modified = {
+          symbol = "[+]",
+          highlight = "NeoTreeModified",
+        },
+        indent = {
+          expander_collapsed = ">",
+          expander_expanded = "",
+          with_markers = false,
+        },
+        name = {
+          trailing_slash = true,
+        },
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+          provider = function(icon, node, state) -- default icon provider utilizes nvim-web-devicons if available
+          end,
+          -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
+          -- then these will never be used.
+          default = "",
+          highlight = "Normal",
+        },
+        git_status = {
+          symbols = {
+            added = "+",
+            modified = "*",
+            deleted = "-",
+            renamed = ">",
+            untracked = "?",
+            ignored = "!",
+            unstaged = "~",
+            staged = "=",
+            conflict = "x",
+          },
+        },
       },
     },
-    opts = {
-      files = {
-        -- Using the parent .git folder as the current working directory
-        cwd = function()
-          local bufPath = vim.api.nvim_buf_get_name(0)
-          local cwd = require("lspconfig").util.root_pattern(".git")(bufPath)
-
-          return cwd
-        end,
+  },
+  ---@type LazySpec
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
+      -- {
+      --   "<leader>-",
+      --   mode = { "n", "v" },
+      --   "<cmd>Yazi<cr>",
+      --   desc = "Open yazi at the current file",
+      -- },
+      {
+        -- Open in the current working directory
+        "<leader>e",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open the file manager in nvim's working directory",
       },
+      -- {
+      --   -- NOTE: this requires a version of yazi that includes
+      --   -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
+      --   "<c-up>",
+      --   "<cmd>Yazi toggle<cr>",
+      --   desc = "Resume the last yazi session",
+      -- },
+    },
+    ---@type YaziConfig
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = false,
+      -- keymaps = {
+      --   show_help = "<f1>",
+      -- },
     },
   },
 }
