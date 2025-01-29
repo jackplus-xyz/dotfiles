@@ -1,0 +1,171 @@
+// Plugin aliases - can be used to change the implementation of Zellij
+// changing these requires a restart to take effect
+plugins {
+    compact-bar location="zellij:compact-bar"
+    configuration location="zellij:configuration"
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    plugin-manager location="zellij:plugin-manager"
+    session-manager location="zellij:session-manager"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    tab-bar location="zellij:tab-bar"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen false
+    }
+    zjstatus location="file:/Users/jj/.config/zellij/plugins/zjstatus.wasm"
+}
+
+// Plugins to load in the background when a new session starts
+// eg. "file:/path/to/my-plugin.wasm"
+// eg. "https://example.com/my-plugin.wasm"
+load_plugins {
+    plugin "file:/Users/jj/.config/zellij/plugins/zjframes.wasm"
+}
+
+default_shell "fish"
+default_layout "default"
+default_mode "normal"
+simplified_ui true
+pane_frames false
+session_name "main"
+attach_to_session true
+ui {
+    pane_frames {
+        // rounded_corners true
+        hide_session_name true
+    }
+}
+
+theme "flexoki-light"
+themes {
+  flexoki-light {
+    fg "#B7B5AC"
+    bg "#FFFCF0"
+    black "#FFFCF0"
+    red "#AF3029"
+    green "#879A39"
+    yellow "#D0A215"
+    blue "#4385BE"
+    magenta "#CE5D97"
+    cyan "#3AA99F"
+    white "#100F0F"
+    orange "#DA702C"
+  }
+  flexoki-dark {
+    fg "#CECDC3"
+    bg "#100F0F"
+    black "#100F0F"
+    red "#D14D41"
+    green "#879A39"
+    yellow "#D0A215"
+    blue "#4385BE"
+    magenta "#CE5D97"
+    cyan "#3AA99F"
+    white "#FFFCF0"
+    orange "#DA702C"
+  }
+  zenwritten_light {
+    fg "#353535"
+    bg "#eeeeee"
+
+    // Flexoki colors
+    // red "#AF3029"
+    // yellow "#D0A215"
+    // blue "#4385BE"
+    // magenta "#CE5D97"
+    // cyan "#3AA99F"
+    // orange "#944927"
+
+    red "#94253E"
+    // green "#3F5A22" // Original zenwritten colors
+    green "#879A39" // use flexoki green readablity
+    yellow "#803D1C"
+    blue "#1D5573"
+    magenta "#7B3B70"
+    cyan "#2B747C"
+    orange "#944927"
+     
+    black "#eeeeee"
+    white "#353535"
+  }
+  zenwritten_dark {
+    fg "#BBBBBB"
+    bg "#191919"
+    red "#E8838F"
+    green "#8BAE68"
+    yellow "#D68C67"
+    blue "#61ABDA"
+    magenta "#CF86C1"
+    cyan "#65B8C1"
+    orange "#F19D4F"
+    black "#191919"
+    white "#BBBBBB"
+  }
+}
+
+
+// Toggle enabling the mouse mode.
+// On certain configurations, or terminals this could
+// potentially interfere with copying text.
+// Options:
+//   - true (default)
+//   - false
+//
+// mouse_mode false
+
+keybinds {
+    normal clear-defaults=true {
+        bind "Super d" { NewPane "Right"; }
+        bind "Super Shift d" { NewPane "Down"; }
+        bind "Super ]" { FocusNextPane; }
+        bind "Super [" { FocusPreviousPane; }
+        bind "Super w" { CloseFocus; }
+
+        bind "Super t" { NewTab; }
+        bind "Super Shift [" "Ctrl Shift Tab" { GoToPreviousTab; }
+        bind "Super Shift ]" "Ctrl Tab" { GoToNextTab; }
+        bind "Super 1" { GoToTab 1; }
+        bind "Super 2" { GoToTab 2; }
+        bind "Super 3" { GoToTab 3; }
+        bind "Super 4" { GoToTab 4; }
+        bind "Super 5" { GoToTab 5; }
+        bind "Super 6" { GoToTab 6; }
+        bind "Super 7" { GoToTab 7; }
+        bind "Super 8" { GoToTab 8; }
+        bind "Super 9" { GoToTab 9; }
+
+        bind "Super Shift Enter" { ToggleFocusFullscreen; }
+        bind "Super e" { TogglePaneEmbedOrFloating; }
+        bind "Super z" { TogglePaneFrames;}
+        bind "Ctrl q" { Detach; }
+
+        bind "Super r" { SwitchToMode "resize"; }
+        bind "Super m" { SwitchToMode "move"; }
+        // bind "Super e" { EditScrollback; }
+        
+        bind "Super o"{
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "normal"
+        }
+    }
+    resize clear-defaults=true {
+        bind "Enter" "Esc" "Super r" { SwitchToMode "normal"; }
+        bind "h" "Left" { Resize "Left"; }
+        bind "j" "Down" { Resize "Down"; }
+        bind "k" "Up" { Resize "Up"; }
+        bind "l" "Right" { Resize "Right"; }
+    }
+    move clear-defaults=true {
+        bind "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "Tab" { MovePane; SwitchToMode "normal"; }
+        bind "h" "Left" { MovePane "Left"; SwitchToMode "normal"; }
+        bind "j" "Down" { MovePane "Down"; SwitchToMode "normal"; }
+        bind "k" "Up" { MovePane "Up"; SwitchToMode "normal"; }
+        bind "l" "Right" { MovePane "Right"; SwitchToMode "normal"; }
+    }
+}

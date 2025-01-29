@@ -1,0 +1,35 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="zjstatus" {
+            format_left  ""
+            format_center "{tabs}"
+            format_right "{mode} {session} "
+            format_space ""
+
+            color_fg      "#100F0F"
+            color_fg_dim  "#403E3C"
+            color_red     "#D14D41"
+            color_green   "#879A39"
+            color_yellow  "#D0A215"
+            color_blue    "#4385BE"
+            color_magenta "#CE5D97"
+            color_cyan    "#3AA99F"
+
+            hide_frame_for_single_pane "true"
+
+            mode_default_to_mode "normal"
+            mode_normal   ""
+            mode_resize   "#[fg=$fg,bg=$cyan,bold] Resize "
+            mode_move     "#[fg=$fg,bg=$yellow,bold] Move "
+
+            tab_normal                "#[fg=$fg_dim] ⏺ "
+            tab_active                "#[fg=$green] ⏺ #[fg=$green,bold]{floating_indicator}"
+            tab_active_fullscreen     "#[fg=$green,bold] [ ] "
+            tab_active_sync           "#[fg=$green,bold] [S] "
+            tab_floating_indicator    "[-] "
+        }
+    }
+    pane split_direction="vertical" {
+        pane
+    }
+}
