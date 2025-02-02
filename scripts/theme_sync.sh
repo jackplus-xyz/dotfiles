@@ -93,7 +93,7 @@ set_zellij_theme() {
   local theme="$zellij_light_theme"
   [[ "$mode" == "dark" ]] && theme="$zellij_dark_theme"
 
-  ln -sf "$ZELLIJ_HOME/themes/$theme.kdl" "$ZELLIJ_HOME/theme.kdl"
+  zellij options --theme theme
 }
 
 theme_sync() {
