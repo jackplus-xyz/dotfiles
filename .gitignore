@@ -41,3 +41,15 @@ Temporary Items
 *.icloud
 
 .aider*
+.config/alacritty/theme.toml
+.config/helix/themes/theme.toml
+.config/karabiner/automatic_backups
+.config/kitty/light-theme-auto.conf
+.config/kitty/dark-theme-auto.conf
+.config/kitty/no-preference-theme-auto.conf
+.config/nvim/lua/cache
+.config/fish/fish_variables
+.config/fish/functions
+.config/fish/conf.d
+.config/fish/completions
+.config/ghostty/shaders/ghostty-shaders

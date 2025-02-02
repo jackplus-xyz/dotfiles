@@ -7,6 +7,7 @@ BAT_HOME="${BAT_HOME:-$HOME/.config/bat}"
 HELIX_HOME="${HELIX_HOME:-$HOME/.config/helix}"
 KAK_HOME="${KAK_HOME:-$HOME/.config/kak}"
 KITTY_HOME="${KITTY_HOME:-$HOME/.config/kitty}"
+NVIM_HOME="${NVIM_HOME:-$HOME/.config/nvim}"
 ZELLIJ_HOME="${ZELLIJ_HOME:-$HOME/.config/zellij}"
 
 alacritty_light_theme="flexoki-light"
@@ -81,6 +82,12 @@ set_kitty_theme() {
   ln -sf "$KITTY_HOME/kitty-themes/themes/${kitty_dark_theme}.conf" "$KITTY_HOME/dark-theme-auto.conf"
 }
 
+set_nvim_theme() {
+  local mode="$1"
+  mkdir -p "$NVIM_HOME/lua/cache"
+  echo "return '$mode'" >"$NVIM_HOME/lua/cache/mode.lua"
+}
+
 set_zellij_theme() {
   local mode="$1"
   local theme="$zellij_light_theme"
@@ -107,6 +114,7 @@ theme_sync() {
   set_helix_theme "$mode"
   set_kak_theme "$mode"
   set_kitty_theme
+  set_nvim_theme "$mode"
   set_zellij_theme "$mode"
 }
 

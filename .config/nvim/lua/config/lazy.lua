@@ -14,6 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local mode = require("cache.mode") or "light"
+vim.api.nvim_set_option_value("background", mode, {})
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
