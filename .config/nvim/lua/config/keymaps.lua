@@ -32,6 +32,7 @@ map("n", "<leader>mt", function()
     vim.notify("Not a Lua file", vim.log.levels.WARN)
     return
   end
+  vim.fn.system("cargo build --release")
   vim.cmd("PlenaryBustedFile %")
 end, { desc = "Test current Lua file", noremap = true, silent = true })
 

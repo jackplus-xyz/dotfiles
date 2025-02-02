@@ -1,11 +1,20 @@
 return {
   {
+    -- Automatically switch between light and dark mode
+    "f-person/auto-dark-mode.nvim",
+    lazy = false,
+    priority = 1001,
+    config = {
+      update_interval = 1000,
+      fallback = "light",
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = function()
       return {
-        -- colorscheme = "flexoki",
+        colorscheme = "flexoki",
         -- colorscheme = "zenwritten",
-        -- colorscheme = "mime",
       }
     end,
   },
@@ -13,9 +22,9 @@ return {
   { "catppuccin/nvim", enabled = false },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    -- enabled = false,
+    -- lazy = false,
+    -- priority = 1000,
+    enabled = false,
     opts = {
       style = "night",
       transparent = true,
@@ -29,12 +38,9 @@ return {
   },
   {
     "zenbones-theme/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    dependencies = "rktjmp/lush.nvim",
     -- lazy = false,
-    priority = 1000,
+    -- priority = 1000,
+    dependencies = "rktjmp/lush.nvim",
     config = function()
       vim.g.zenwritten_transparent_background = vim.g.neovide and false or true
       vim.api.nvim_create_autocmd("ColorScheme", {
@@ -56,18 +62,5 @@ return {
         end,
       })
     end,
-  },
-  {
-    -- Automatically switch between light and dark mode
-    "f-person/auto-dark-mode.nvim",
-    config = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        vim.cmd("set background=dark")
-      end,
-      set_light_mode = function()
-        vim.cmd("set background=light")
-      end,
-    },
   },
 }

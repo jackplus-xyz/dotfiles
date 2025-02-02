@@ -1,5 +1,23 @@
 return {
   {
+    "jackplus-xyz/player-one.nvim",
+    dev = true,
+    dir = "~/Developer/projects/player-one.nvim",
+    lazy = true,
+    -- enabled = false,
+    dependencies = {
+      -- {
+      --   "saghen/blink.cmp",
+      --   enabled = false,
+      -- },
+      {
+        "nvim-lua/plenary.nvim",
+        lazy = false,
+      },
+    },
+    opts = {},
+  },
+  {
     "jackplus-xyz/scroll-it.nvim",
     -- enabled = false,
     dev = true,
@@ -25,7 +43,6 @@ return {
     -- dev = true,
     -- dir = "~/Developer/projects/binary.nvim",
     -- lazy = false,
-    priority = 1000,
     -- opts = {
     --   colors = {
     --     -- fg = "#ff0000",
@@ -64,35 +81,5 @@ return {
       --   bold_italic = {},
       -- },
     },
-  },
-  {
-    -- Archived and successed by `player-one.nvim`
-    "jackplus-xyz/campfire.nvim",
-    enabled = false,
-    dev = true,
-    dir = "~/Developer/projects/campfire.nvim",
-    -- lazy = false,
-    config = function()
-      require("campfire").setup()
-    end,
-    -- opts = {},
-  },
-  {
-    "jackplus-xyz/player-one.nvim",
-    dev = true,
-    dir = "~/Developer/projects/player-one.nvim",
-    -- lazy = true,
-    -- enabled = false,
-    dependencies = {
-      -- {
-      --   "saghen/blink.cmp",
-      --   enabled = false,
-      -- },
-      {
-        "nvim-lua/plenary.nvim",
-        lazy = false,
-      },
-    },
-    opts = {},
   },
 }
