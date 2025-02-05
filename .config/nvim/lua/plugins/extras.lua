@@ -1,5 +1,6 @@
 return {
   --[[ AI ]]
+  { import = "lazyvim.plugins.extras.ai.copilot" },
   { import = "lazyvim.plugins.extras.ai.copilot-chat" },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -14,7 +15,7 @@ return {
     keys = {
       {
         "<leader>am",
-        "<Cmd><CR>",
+        "<Cmd>CopilotChatModels<CR>",
         desc = "Select Models (CopilotChat)",
       },
     },
