@@ -1,16 +1,31 @@
 return {
-  --[[ AI ]]
-  { import = "lazyvim.plugins.extras.ai.copilot" },
-  { import = "lazyvim.plugins.extras.ai.copilot-chat" },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    -- enabled = false,
     opts = {
       model = "claude-3.5-sonnet",
       question_header = "[>] ",
       answer_header = "< ",
       auto_insert_mode = false,
       show_help = false,
+      contexts = {
+        file = {
+          input = function(callback)
+            local fzf = require("fzf-lua")
+            local fzf_path = require("fzf-lua.path")
+            fzf.files({
+              complete = function(selected, opts)
+                local file = fzf_path.entry_to_file(selected[1], opts, opts._uri)
+                if file.path == "none" then
+                  return
+                end
+                vim.defer_fn(function()
+                  callback(file.path)
+                end, 100)
+              end,
+            })
+          end,
+        },
+      },
     },
     keys = {
       {
@@ -18,11 +33,13 @@ return {
         "<Cmd>CopilotChatModels<CR>",
         desc = "Select Models (CopilotChat)",
       },
+      {
+        "<leader>ac",
+        "<Cmd>CopilotChatCommit<CR>",
+        desc = "Write Commit Message (CopilotChat)",
+      },
     },
   },
-  --[[ CODING ]]
-  { import = "lazyvim.plugins.extras.coding.blink" },
-  { import = "lazyvim.plugins.extras.coding.mini-surround" },
   {
     -- Overwrite the default keymaps of `gs` to `;`
     "echasnovski/mini.surround",
@@ -63,26 +80,4 @@ return {
       },
     },
   },
-  { import = "lazyvim.plugins.extras.coding.yanky" },
-  --[[ EDITOR ]]
-  { import = "lazyvim.plugins.extras.editor.dial" },
-  { import = "lazyvim.plugins.extras.editor.fzf" },
-  { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
-  { import = "lazyvim.plugins.extras.editor.snacks_picker" },
-  -- { import = "lazyvim.plugins.extras.editor.inc-rename" },
-  { import = "lazyvim.plugins.extras.editor.mini-diff" },
-  --[[ UI ]]
-  { import = "lazyvim.plugins.extras.ui.treesitter-context" },
-  --[[ UTILS ]]
-  { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-  --[[ LANGUAGES ]]
-  { import = "lazyvim.plugins.extras.lang.clangd" },
-  { import = "lazyvim.plugins.extras.lang.json" },
-  { import = "lazyvim.plugins.extras.lang.markdown" },
-  { import = "lazyvim.plugins.extras.lang.python" },
-  { import = "lazyvim.plugins.extras.lang.rust" },
-  { import = "lazyvim.plugins.extras.lang.svelte" },
-  { import = "lazyvim.plugins.extras.lang.tailwind" },
-  { import = "lazyvim.plugins.extras.lang.toml" },
-  { import = "lazyvim.plugins.extras.lang.typescript" },
 }
