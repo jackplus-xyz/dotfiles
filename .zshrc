@@ -101,78 +101,60 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
 #
-# customizations
+# Environment Variables
 #
 export EDITOR="nvim"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 #
-# aliases
+# Package Managers
 #
-alias src="source ~/.zshrc"
-
-# eza aliases
-alias ls=eza
-alias la="ls -a"
-alias ll="ls -la"
-
-# navigation aliases
-alias ..="cd .."
-alias ...="cd ../.."
-
-# utils aliases
-alias cat=bat
-alias cl=clear
-alias n=nvim
-alias lg=lazygit
-alias yy=yazi
-alias love="/Applications/love.app/Contents/MacOS/love"
-alias grep="grep --color=auto"
-
-# History aliases
-alias h='history'
-alias hgrep='history | grep'
-alias hclear='history -c'
-
-# Fzf aliases
-alias fzf='fzf-tmux'
-alias fh='history | fzf'
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --bind 'enter:execute(nvim {})'"
-export FZF_DEFAULT_COMMAND="fd --type f"
-
-# function neovide(){
-#     ARG="${1:-.}"
-#     CUR="$(pwd)"
-#     FILE="${CUR}/${ARG}"
-#     PATH=$(env) NEOVIDE_CWD=$(pwd) open -a Neovide.app --args $(pwd)
-# }
-alias nv=neovide
-
 # pnpm
 export PNPM_HOME="/Users/jj/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
-# Binding fcd
-fcd () {
-  local dir
-  dir=$(find ${1:-.} -type d -maxdepth 1 -mindepth 1 2>/dev/null | fzf-tmux +m) &&
-}
+#
+# Aliases
+#
+# System & Navigation
+alias src="source ~/.zshrc"
+alias ..="cd .."
+alias ...="cd ../.."
+alias cl=clear
 
+# Enhanced Commands
+alias cat=bat
+alias ls=eza
+alias la="ls -a"
+alias ll="ls -la"
+alias grep="ripgrep --color=auto"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# History Management
+alias his='history'
+alias hgrep='history | grep'
+alias hclear='history -c'
 
-# https://github.com/nvbn/thefuck
-eval $(thefuck --alias)
+# Editors
+alias n=nvim
+alias nv=neovide
+alias h=hx
+alias k=kak
 
-# helper function to reload kitty config
-kitty-reload() {
-    echo "Reloading Kitty... "
-    kill -SIGUSR1 $KITTY_PID
-    echo "... Done"
-}
+# Tools & Applications
+alias lg=lazygit
+alias y=yazi
+alias zj=zellij
+alias love="/Applications/love.app/Contents/MacOS/love"
+
+#
+# FZF Configuration
+#
+export FZF_ALT_C_COMMAND=
+export FZF_ALT_C_OPTS="--disabled"
+source <(fzf --zsh)
 
 # ------------------
 # Initialize modules

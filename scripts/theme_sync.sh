@@ -80,6 +80,10 @@ set_kitty_theme() {
   ln -sf "$KITTY_HOME/custom-themes/${kitty_light_theme}.conf" "$KITTY_HOME/no-preference-theme.auto.conf"
   ln -sf "$KITTY_HOME/custom-themes/${kitty_light_theme}.conf" "$KITTY_HOME/light-theme.auto.conf"
   ln -sf "$KITTY_HOME/custom-themes/${kitty_dark_theme}.conf" "$KITTY_HOME/dark-theme.auto.conf"
+
+  # ln -sf "$KITTY_HOME/kitty-themes/themes/${kitty_light_theme}.conf" "$KITTY_HOME/no-preference-theme.auto.conf"
+  # ln -sf "$KITTY_HOME/kitty-themes/themes/${kitty_light_theme}.conf" "$KITTY_HOME/light-theme.auto.conf"
+  # ln -sf "$KITTY_HOME/kitty-themes/themes/${kitty_dark_theme}.conf" "$KITTY_HOME/dark-theme.auto.conf"
 }
 
 set_nvim_theme() {
