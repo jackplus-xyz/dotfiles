@@ -1,28 +1,11 @@
-command = "/usr/local/bin/fish"
+theme=light:flexoki-light,dark:flexoki-dark
 
-copy-on-select = true
-mouse-hide-while-typing = true
-confirm-close-surface = false
-macos-option-as-alt = left
-
-# UI
-macos-titlebar-style = hidden
-window-padding-x = 8
-window-padding-y = 8
-# theme=light:flexoki-light,dark:flexoki-dark
-theme=light:zenwritten_light,dark:zenwritten_dark
-
-# Fonts
-font-size = 14
+font-family = TX-02
 font-feature = -dlig
 font-feature = -calt
 font-feature = -liga
-font-family = TX-02
-font-style = Medium
-font-style-bold = Bold
-font-style-italic = Medium Oblique
-font-style-bold-italic = Bold Oblique
-window-title-font-family = TX-02
 
-# Custom Shader
-# custom-shader = "/Users/jj/.config/ghostty/shaders/ghostty-shaders/in-game-crt.glsl"
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+confirm-close-surface = false
+macos-option-as-alt = left
